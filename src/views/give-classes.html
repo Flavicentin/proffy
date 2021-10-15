@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt_br"> <!--Lang é um atributo, que define a linguagem do HTML-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proffy | Sua Plataforma de Estudos</title>
+    <link rel="stylesheet" href="/Styles/main.css">
+    <link rel="stylesheet" href="/Styles/Partials/page-give-classes.css">
+    <link rel="stylesheet" href="/Styles/Partials/header.css">
+    <link rel="stylesheet" href="/Styles/Partials/form.css">
+    <meta name="theme-color" content="#8257E5">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">  
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+    <script src="/Scripts/addField.js" defer></script>
+</head>
+<body id="page-give-classes">
+    <div id="container">
+       <header class="page-header">
+           <div class=" top-bar-container">
+               <a href="/index"><img src="/images/icons/back.svg" alt="Voltar"></a>
+               <img src="/images/logo.svg" alt="Proffy">
+           </div>
+           <div class="header-content">
+            <strong>Incrível que você quer dar aulas</strong>
+            <p>O primeiro passo é prencher o formulário!</p>
+           </div>
+       </header>
+       <main>
+            <form action="" id="crate-classes">
+                <fieldset> <!--Agrupamento de classes-->
+                    <legend>Seus Dados</legend> <!--O título do agrupamento-->
+                    <div class="input-block">
+                        <label for="name">Nome Completo</label>
+                        <input name="name" id="name" required> <!--Required (campo obrigatório) -->
+                    </div>
+
+                    <div class="input-block">
+                        <label for="avatar">Link da sua Foto<small>(comece com https://)</small></label>
+                        <input name="avatar" id="avatar" type="url" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="whatsapp">Whatsapp<small>(somente números)</small></label>
+                        <input name="whatsapp" id="whatsapp" type="number"  required>
+                    </div>
+
+                    <div class="textarea-block">
+                        <label for="Bio">Biografia</label>
+                        <textarea name="bio" id="bio"></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>  Sobre a aula </legend>
+
+                    <div class="select-block">
+                        <label for="subject">  Matéria </label>
+                        <select name="subject" id="subject" required>
+                             <option value="">Selecione uma Opção</option>
+                             {%for subject in subjects %}
+                             <option value="{{loop.index}}"> 
+                                 {{subject}}
+                             </option>
+                          {%endfor%}
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <label for="Cost">Custo da Sua Aula <small>(R$)</small></label>
+                        <input name="cost" type="cost" id="cost" type="number" required>
+                    </div>
+                </fieldset>
+
+                <fieldset id="schedule-item">
+                    <legend>Horários Disponíveis
+                    <button type="button" id="add-time">+ Novo Horario</button>
+                    </legend>
+                    <div class="schedule-item">
+                        <div class="select-block">
+                            <label for="weekday">Dia da semana</label>
+                            <select name="weekday[]" required>
+                                <option value="">Selecione uma opção</option>
+                                {%for weekday in weekdays %}
+                                <option value="{{loop.index0}}"> 
+                                    {{weekday}}
+                                </option>
+                                {%endfor%}
+                            </select> <!--Conchetes sereve para que ele pode vir mais de um valor (agrupar valor)-->
+                        </div>
+                        <div class="input-block">
+                            <label for="time_from">Das</label>
+                            <input type="time" name="time_from[]" required> <!--Required é para termos obrigatorios, que serão usados para o formulariom (tipo a senha, mano se n vai deixar o cara enviar um email sem senha, ne?)-->
+                            
+                        </div>
+
+                        <div class="input-block">
+                            <label for="time_to">Até</label>
+                            <input type="time" name="time_to[]" required> <!--Required é para termos obrigatorios, que serão usados para o formulariom (tipo a senha, mano se n vai deixar o cara enviar um email sem senha, ne?)-->
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <footer>
+                <p>
+                <img src="/images/icons/warning.svg" alt="Aviso Importante">
+                Importante! <br>
+                Preencha todos os dados
+                </p>
+                <button type="submit" form="crate-classes">Enviar cadastro</button>              
+            </footer>
+       </main>
+       </div>       
+    </div>   
+
+    <script> 
+
+    </script>
+ </body>
+</html> 
+

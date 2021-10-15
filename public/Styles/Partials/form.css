@@ -1,0 +1,87 @@
+.select-block label{
+  font-size: 1.4rem;
+  color: var(--color-box-base);
+}
+
+ .input-block label{
+  font-size: 1.4rem;
+  color: var(--color-text-base);
+}
+
+.textarea-block label{
+  font-size: 1.4rem;
+  color:var(--color-text-base);
+}
+
+.input-block input{
+  width: 100%;
+  height: 5rem;
+  margin-top: 0.8rem;
+  background-color: #efefef;
+  border: 0;
+  border-radius: 1rem;
+  outline: 0;
+  padding: 0 1.6rem;
+  font: 1.6rem Archivo;
+}
+
+
+.select-block select{
+  width: 100%;
+  height: 5rem;
+  margin-top: 0.8rem;
+  background-color: #efefef;
+  border: 0;
+  border-radius: 1rem;
+  outline: 0;
+  padding: 0 1.6rem;
+  font: 1.6rem Archivo;
+}
+
+.textarea-block textarea{
+  width: 100%;
+  height: 10rem;
+  margin-top: 0.8rem;
+  background-color: #efefef;
+  border: 0;
+  border-radius: 1rem;
+  outline: 0;
+  padding: 1.2rem 1.6rem;
+  font: 1.6rem Archivo;
+  display: block;
+  resize: vertical;
+  padding-bottom: 5rem;
+
+}
+
+
+.input-block{
+  position: relative;
+}
+
+.textarea-block{
+  position: relative;
+}
+
+.input-block:focus-within::after{ /*criar um elemento HTML, somente quando este campo estiver em foco*/
+  content: "";
+  width: calc(100% - 3.2rem);
+  height: 2px;
+  background: var(--color-primary-light);
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: 0px;
+}
+
+.textarea-block:focus-within::after{ /*criar um elemento HTML, somente quando este campo estiver em foco*/
+  content: "";
+  width: calc(100% - 3.2rem);
+  height: 2px;
+  background: var(--color-primary-light);
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: 0px;
+
+}
